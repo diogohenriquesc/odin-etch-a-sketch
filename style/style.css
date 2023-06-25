@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 .container {
@@ -38,8 +38,40 @@ body {
   border: 2px solid #121212;
   margin-bottom: 1rem;
   padding: .5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.grid__controls > * {
+  flex: 1;
 }
 
 .range-label {
-  width: fit-content;
+  text-align: center;
 }
+
+#range-grid {
+  accent-color: #FF7700;
+}
+
+#clear-btn, #rainbow-btn {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  background-color: hsla(0, 0%, 7%, .5);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: .0938rem;
+  font-weight: 700;
+  transition: all 200ms ease-in-out;
+}
+
+#clear-btn:hover, #rainbow-btn:hover {
+  background-color: #FF7700;
+}
+
+#rainbow-btn.checked {
+  background-color: #FF7700;
+}
+

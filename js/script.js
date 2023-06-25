@@ -2,7 +2,7 @@ const grid = document.querySelector('.grid');
 const gridRange = document.querySelector('#range-grid');
 const cleanBtn = document.querySelector('#clear-btn');
 const rainbowBtn = document.querySelector('#rainbow-btn');
-let gridColor = '#FF7700';
+const gridColor = '#FF7700';
 let rainbowMode = false; 
 
 function createGrid(number) {
@@ -50,7 +50,7 @@ gridRange.addEventListener('change', (e) => {
 
 function updateRangeOutput(value) {
   const rangerOutput = document.querySelector('.range__output');
-  rangerOutput.textContent = `${value} x ${value}`;
+  rangerOutput.textContent = `${value}  x  ${value}`;
 }
 
 cleanBtn.addEventListener('click', () => {
@@ -58,7 +58,13 @@ cleanBtn.addEventListener('click', () => {
 });
 
 rainbowBtn.addEventListener('click', () => {
-  rainbowMode = true;
+  rainbowMode = rainbowMode ? false : true;
+
+  if (rainbowMode) {
+    rainbowBtn.classList.add('checked');
+  } else {
+    rainbowBtn.classList.remove('checked');
+  }
 });
 
 
