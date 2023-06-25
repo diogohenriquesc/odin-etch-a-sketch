@@ -20,7 +20,11 @@ function updateGridLayout(value) {
 }
 
 function changeColor(e) {
-  e.target.classList.add('hovered');
+  e.target.style.background = getRandomColor();
+}
+
+function getRandomColor() {
+  return `hsla(${Math.random() * 360}, 100%, 50%, 1)`;
 }
 
 gridRange.addEventListener('change', (e) => {
