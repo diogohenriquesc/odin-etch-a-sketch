@@ -1,5 +1,9 @@
 const grid = document.querySelector('.grid');
 const gridRange = document.querySelector('#range-grid');
+const cleanBtn = document.querySelector('#clear-btn');
+const rainbowBtn = document.querySelector('#rainbow-btn');
+let gridColor = '#FF7700';
+let rainbowMode = false; 
 
 function createGrid(number) {
   for (let i = 0; i < number; i++) {
@@ -15,12 +19,21 @@ function removeGrid() {
   gridItems.forEach(item => item.remove());
 }
 
+function clearGrid(value) {
+  removeGrid();
+  createGrid(value * value);
+}
+
 function updateGridLayout(value) {
   grid.style = `grid-template-columns: repeat(${value}, 1fr)`;
 }
 
 function changeColor(e) {
-  e.target.style.background = getRandomColor();
+  if (!rainbowMode) {
+    e.target.style.background = gridColor;
+  } else {
+    e.target.style.background = getRandomColor();
+  }
 }
 
 function getRandomColor() {
@@ -39,5 +52,14 @@ function updateRangeOutput(value) {
   const rangerOutput = document.querySelector('.range__output');
   rangerOutput.textContent = `${value} x ${value}`;
 }
+
+cleanBtn.addEventListener('click', () => {
+  clearGrid(gridRange.value);
+});
+
+rainbowBtn.addEventListener('click', () => {
+  rainbowMode = true;
+});
+
 
 createGrid(256);

@@ -13,11 +13,21 @@
 <body>
   <main>
     <section class="container">
+      <h1 class="container__title">Etch-a-Sketch</h1>
       <div class="grid__controls">
         <label class="range-label">
           <input type="range" id="range-grid" value="16" min="16" max="100">
           <p class="range__output">16x16</p>
         </label>
+
+        <label class="clear-label">
+          <button id="clear-btn">Clear</button>
+        </label>
+
+        <label class="rainbow-label">
+          <button id="rainbow-btn">Rainbow mode</button>
+        </label>
+
       </div>
 
       <div class="grid">
