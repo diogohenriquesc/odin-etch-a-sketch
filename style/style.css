@@ -30,3 +30,13 @@ body {
 .grid__item.hovered {
   background-color: #519E8A;
 }
+
+.grid__controls {
+  border: 2px solid #121212;
+  margin-bottom: 1rem;
+  padding: .5rem;
+}
+
+.range-label {
+  width: fit-content;
+}
